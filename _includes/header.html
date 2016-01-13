@@ -1,4 +1,3 @@
-
 <header>
 
   <h1>Lifted Logic Code Standards and Guidelines</h1>
@@ -6,6 +5,8 @@
     <ul class="nav">
 
       {% if page.slug == 'global' %}
+        {% assign global = 'active' %}
+      {% else if page.name == 'index.html' %}
         {% assign global = 'active' %}
       {% endif %}
       

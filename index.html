@@ -6,7 +6,7 @@ layout: default
   
   {% if guide.title %}
   
-    <div class="content" id="content__{{ guide.slug }}">
+    <div class="content {% if guide.slug == 'global' %}open{% endif %}" id="content__{{ guide.slug }}">
 
       {{ guide.content }}
 
