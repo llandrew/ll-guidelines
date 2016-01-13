@@ -1,0 +1,25 @@
+---
+layout: default
+---
+
+{% for guide in site.pages %}
+  
+  {% if guide.title %}
+
+    {% assign open = nil %}
+
+    {% if page.slug contains guide.slug %}
+    
+      {% assign open = 'open' %}
+    
+    {% endif %}
+  
+    <div class="content {{ open }}" id="content__{{ guide.slug }}">
+
+      {{ guide.content }}
+
+    </div>
+
+  {% endif %}
+  
+{% endfor %}

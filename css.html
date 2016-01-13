@@ -1,0 +1,63 @@
+---
+layout: page
+title: CSS/Sass
+permalink: /css/
+slug: css
+---
+
+<section class="scrollto" id="css-syntax">
+  <h2>Syntax and Formatting</h2>
+
+  <h3>Titles</h3>
+  <p>Have a title at the top of each file. Make sure titles are brief yet relevant
+  to the content contained within.</p>
+
+  <h4><em>Bad...</em></h4>
+
+<pre><code class="language-css">
+/**
+ * Search Modules
+ */
+</code></pre>
+
+  <h3>Multi-line</h3>
+  <p>Very rarely will you run into an instance where a single line declaration is
+  more appropriate than a multi-line declaration. The only time a single line declaration
+  makes sense is for things such as helper classes.</p>
+
+<pre><code class="language-css">
+/**
+ * Multi-line
+ */
+
+.box {
+  width: 100px;
+  height: 100px;
+}
+
+.bordered {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+
+/**
+ * Single Line
+ */
+
+.bold { font-weight: 700; }
+.hidden { display: none !important; }
+</code></pre>
+
+</section>
+
+<section class="scrollto" id="css-naming">
+
+  <h2>Naming</h2>
+
+  <h3>Syntax</h3>
+  <ul>
+    <li>Words should be seperated by dashes (e.g. my-new-class), not Camel Case (e.g. myNewClass) or Snake Case (e.g. my_new_class).</li>
+    <li>Names should be based on the B.E.M. (Block Element Modifier) convention. <a href="https://css-tricks.com/bem-101/"><em>BEM 101 - CSS Tricks</em></a></li>
+  </ul>
+
+</section> 

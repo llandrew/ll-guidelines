@@ -1,0 +1,59 @@
+
+<header>
+
+  <h1>Lifted Logic Code Standards and Guidelines</h1>
+  <nav>
+    <ul class="nav">
+
+      {% if page.slug == 'global' %}
+        {% assign global = 'active' %}
+      {% endif %}
+      
+      {% if page.slug == 'html' %}
+        {% assign html = 'active' %}
+      {% endif %}
+      
+      {% if page.slug == 'css' %}
+        {% assign css = 'active' %}
+      {% endif %}
+      
+      {% if page.slug == 'javascript' %}
+        {% assign js = 'active' %}
+      {% endif %}
+      
+      {% if page.slug == 'php' %}
+        {% assign php = 'php' %}
+      {% endif %}
+      
+      {% if page.slug == 'wordpress' %}
+        {% assign wp = 'active' %}
+      {% endif %}
+
+      <li class="nav__item {{ global }}" data-tab="global">
+        <span>Global</span>
+        <ul class="nav__dropdown">
+          <li class="nav__dropdown__item">Namespacing</li>
+          <li class="nav__dropdown__item">Editor Settings</li>
+        </ul>
+      </li>
+      <li class="nav__item {{ html }}" data-tab="html">
+        <span>HTML</span>
+        <ul class="nav__dropdown">
+          <li class="nav__dropdown__item" href="#html-general">General</li><!-- /.nav__dropdown__item -->
+          <li class="nav__dropdown__item" href="#html-doctype">Doctype</li><!-- /.nav__dropdown__item -->
+          <li class="nav__dropdown__item" href="#html-lang-attribute">Language Attribute</li><!-- /.nav__dropdown__item -->
+          <li class="nav__dropdown__item" href="#html-ie-compat">IE Compatibility Mode</li><!-- /.nav__dropdown__item -->
+          <li class="nav__dropdown__item" href="#html-char-encoding">Character Encoding</li><!-- /.nav__dropdown__item -->
+          <li class="nav__dropdown__item" href="#html-asset-includes">Asset Includes</li><!-- /.nav__dropdown__item -->
+          <li class="nav__dropdown__item" href="#html-attributes">Attributes</li><!-- /.nav__dropdown__item -->
+          <li class="nav__dropdown__item" href="#html-structure">Structure</li><!-- /.nav__dropdown__item -->
+          <li class="nav__dropdown__item" href="#html-commenting">Commenting</li><!-- /.nav__dropdown__item -->
+        </ul>
+      </li>
+      <li class="nav__item {{ css }}" data-tab="css">CSS/SASS</li>
+      <li class="nav__item {{ js }}" data-tab="javascript">Javascript</li>
+      <li class="nav__item {{ php }}" data-tab="php">PHP</li>
+      <li class="nav__item {{ wp }}" data-tab="wordpress">WordPress</li>
+    </ul>
+  </nav>
+</header>

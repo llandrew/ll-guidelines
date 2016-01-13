@@ -1,0 +1,254 @@
+---
+layout: page
+title: HTML
+permalink: /html/
+slug: html
+---
+
+<section class="scrollto" id="html-general">
+  <h2>General</h2>
+
+  <ul>
+    <li>Always use double quotes ("") instead of single quotes ('') for attributes.</li>
+    <li>Don't include a trailing slash in self-closing elements.</li>
+    <li>Don't omit option closing tags (e.g. &lt;/li&gt;).</li>
+    <li>Always indent child elements (two spaces).</li>
+  </ul>
+
+  <h3>Keep your code simple</h3>
+  <p>Keep markup as simple as possible to fit the need. Avoid using extra elements for styling purposes. Avoid
+  having extraneous parent elements or unneccessary complexity.</p>
+
+  <h4><em>Bad...</em></h4>
+
+<pre><code class="language-markup">
+&lt;div class="image__container"&gt;
+  &lt;span class="image__image__container"&gt;
+    &lt;img src="http://..."&gt;
+  &lt;/span&gt;
+  &lt;span class="image__caption__container"&gt;
+    &lt;p class="image__caption__content"&gt;
+      ...
+    &lt;/p&gt;
+  &lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+
+  <h4><em>Better</em></h4>
+
+<pre><code class="language-markup">
+&lt;div class="image__container"&gt;
+  &lt;img src="http://..."&gt;
+  &lt;p class="image__caption"&gt;
+    ...
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+
+  <h3>Javascript generated markup</h3>
+  <p>Having Javascript generate markup makes maintaining templates more difficult, so try to avoid
+  it whenever possible.</p>
+
+</section>
+
+<section class="scrollto" id="html-doctype">
+
+  <h2>Doctype</h2>
+
+  <p>To make sure standards mode is enforced and that there is a more 
+  consistent rendering across browsers, a doctype must be declared at the beginning
+  of every HTML page.</p>
+
+<pre><code class="language-markup">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  ...
+&lt;/html&gt;
+</code></pre>
+
+</section>
+
+<section class="scrollto" id="html-lang-attribute">
+
+  <h2>Language Attribute</h2>
+
+  <p>Declaring a language through the lang attribute is encouraged as it promotes
+  accessability by aiding speech synthesis and translation tools.</p>
+
+<pre><code class="language-markup">
+&lt;html lang="en-us"&gt;
+  ...
+&lt;/html&gt;
+</code></pre>
+
+</section>
+
+<section class="scrollto" id="html-ie-compat">
+
+  <h2>IE Compatibility Mode</h2>
+
+  <p>Unless there is a reason to have IE render as a specific version, the &lt;meta&gt;
+  tag should always be set to the latest supported mode with edge mode.</p>
+  <aside>
+    <a 
+      href="http://stackoverflow.com/questions/6771258/whats-the-difference-if-meta-http-equiv-x-ua-compatible-content-ie-edge-e" 
+      title="Stack Overflow: What's the difference..."
+      target="_blank"
+    >
+      Read More
+    </a>
+  </aside>
+
+<pre><code class="language-markup">
+&lt;meta http-equiv="X-UA-Compatible" content="IE=Edge"&gt;
+</code></pre>
+
+</section>
+
+<section class="scrollto" id="html-char-encoding">
+
+    <h2>Character Encoding</h2>
+
+    <p>For the sake of consistent rendering of text, it is important to always set the
+    character encoding &lt;meta&gt; tag.</p>
+
+<pre><code class="language-markup">
+&lt;meta charset="UTF-8"&gt;
+</code></pre>
+
+</section>
+
+<section class="scrollto" id="html-asset-includes">
+
+  <h2>Asset Includes</h2>
+
+  <p>CSS includes should use the &lt;link&gt; tag and be included in the head
+  of the file. If inline styles are needed, they should wrapped in a &lt;style&gt;
+  tag and also included in the head.</p>
+
+  <p>When including JS files, always try to use a &lt;script&gt; tag with a 
+  src set and have it included just before the closing &lt;body&gt; tag.</p>
+
+  <p>With HTML5, there is no need to specify a type when including CSS or JS files
+  as the defaults for &lt;link&gt; and &lt;script&gt; are already set.</p>
+
+<pre><code class="language-markup">
+&lt;head&gt;
+  &lt;link rel="stylesheet" href=".../style.css"&gt;
+
+  &lt;style&gt;
+    ...
+  &lt;/style&gt;
+
+  &lt;script src=".../script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+</code></pre>
+
+</section>
+
+<section class="scrollto" id="html-attributes">
+  
+  <h2>Attributes</h2>
+
+  <h3>Attribute order</h3>
+
+  <p>When writing HTML, attributes should be listed by order of specificity.</p>
+
+  <p><em>The ideal order is following:</em></p>
+
+  <ul>
+    <li>class, type</li>
+    <li>id, name</li>
+    <li>data-*</li>
+    <li>src, for, type, href, value</li>
+    <li>title, alt</li>
+    <li>aria-*, role</li>
+  </ul>
+
+<pre><code class="language-markup">
+&lt;a class="..." id="..." data-modal="toggle" href="#"&gt;
+  ...
+&lt;/a&gt;
+
+&lt;input type="text" class="form-control"&gt;
+
+&lt;img src="..." alt="..."&gt;
+</code></pre>
+
+<h3>Boolean attributes</h3>
+
+<p>With the introduction of HTML5, boolean attributes (an attribute that doesn't need
+a declared value) are no longer required to have declared values to be compliant with
+standards.</p>
+
+<blockquote>
+  The presence of a boolean attribute on an element represents the true value, and the
+  absence of the attribute represents the false value.<br>
+  [...]<br>
+  If the attribute is present, its value must either be the empty string or [...] the 
+  attribute's canonical name, with no leading or trailing whitespace.
+</blockquote>
+
+<pre><code class="language-markup">
+&lt;input type="text" disabled&gt;
+
+&lt;input type="checkbox" value="1" checked&gt;
+
+&lt;select&gt;
+  &lt;option value="1" selected&gt;1&lt;/option&gt;
+&lt;/select&gt;
+</code></pre>
+</section>
+
+<section class="scrollto" id="html-structure">
+  
+  <h2>Structure</h2>
+
+  <p>The new, more semenatic HTML elements allow for better readability
+  and cleaner structures. Always try to use the most appropriate block-level
+  element for main layout sections, reserving &lt;div&gt; elements for more
+  specific sections.</p>
+
+  <h4><em>Good...</em></h4>
+
+<pre><code class="language-markup">
+&lt;div class="header"&gt;
+  &lt;div class="nav"&gt;
+    ...
+  &lt;/div&gt;
+  &lt;div class="content"&gt;
+    &lt;div class="content__section"&gt;
+      ...
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</code></pre>
+
+  <h4><em>Better</em></h4>
+
+<pre><code class="language-markup">
+&lt;header class="header"&gt;
+  &lt;nav class="navigation"&gt;
+    ...
+  &lt;/nav&gt;
+&lt;/header&gt;
+&lt;main class="content"&gt;
+  &lt;section class="content__section"&gt;
+    ...
+  &lt;/section&gt;
+&lt;/main&gt;
+</code></pre>
+
+</section>
+
+<section class="scrollto" id="html-commenting">
+
+  <h2>Commenting</h2>
+
+  <p>Use comments to mark closing tags for large, block-level elements.</p>
+
+<pre><code class="language-markup">
+&lt;/div&gt;&lt;!-- /.selector --&gt;
+</code></pre>
+
+</section>

@@ -1,0 +1,37 @@
+---
+layout: page
+title: WordPress
+permalink: /wordpress/
+slug: wordpress
+---
+
+<section class="scrollto" id="wordpress-plugins">
+
+  <h2>Using Plugins</h2>
+  <h3>Functions and Template Tags</h3>
+
+  <p>Because plugins can be deactivated at any time and that action must
+  not impact the function of the theme, we should always be adding sanity
+  checks to all plugin usage.</p>
+
+  <h4><em>Bad...</em></h4>
+        
+<pre><code class="language-php">
+/**
+ * Call Template Tag
+ */
+
+my_template_tag();
+</code></pre>
+
+  <h4><em>Better</em></h4>
+
+<pre><code class="language-php">
+/**
+ * Call Template Tag
+ */
+
+if ( function_exists( 'my_template_tag' ) )
+  my_template_tag();
+</code></pre>
+</section>

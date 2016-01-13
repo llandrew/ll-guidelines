@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+{% for guide in site.pages %}
+  
+  {% if guide.title %}
+  
+    <div class="content" id="content__{{ guide.slug }}">
+
+      {{ guide.content }}
+
+    </div>
+
+  {% endif %}
+
+{% endfor %}
