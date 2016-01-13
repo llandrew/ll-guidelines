@@ -8,6 +8,21 @@ slug: css
 <section class="scrollto" id="css-syntax">
   <h2>Syntax and Formatting</h2>
 
+  <ul>
+    <li>Use soft tabs (2 spaces) to guarentee the file renders the same on all systems.</li>
+    <li>Keep each selector on its own line when grouping selectors unless it makes sense otherwise.</li>
+    <li>Always put a space between the opening brace and the last selector in the call.</li>
+    <li>Always put the closing brace on its own line.</li>
+    <li>Make sure to have a space after the colon for a declaration.</li>
+    <li>Keep each declaration on its own line.</li>
+    <li>Always put a semicolon at the end of the declaration to help avoid any errors.</li>
+    <li>Include a space after each comma in each declaration except for rgb(), rgba(), hsl(), hsla(), and rect().</li>
+    <li>Prefix all decimals smaller than 1 with a 0 (e.g. 0.5rem).</li>
+    <li>Hex values can be all upper or all lower case, but must stay consistent with the rest of the file.</li>
+    <li>Make sure to use quotes when using an attribute selector (e.g. [type="text"]).</li>
+    <li>If a value is 0, it does not need a unit.</li>
+  </ul>
+
   <h3>Titles</h3>
   <p>Have a title at the top of each file. Make sure titles are brief yet relevant
   to the content contained within.</p>
@@ -16,34 +31,6 @@ slug: css
 /**
  * Search Modules
  */
-</code></pre>
-  
-  <h3>Multi-line</h3>
-  <p>Very rarely will you run into an instance where a single line declaration is
-  more appropriate than a multi-line declaration. The only time a single line declaration
-  makes sense is for things such as helper classes.</p>
-
-<pre><code class="language-css">
-/**
- * Multi-line
- */
-
-.box {
-  width: 100px;
-  height: 100px;
-}
-
-.bordered {
-  border-top: 2px solid white;
-  border-bottom: 2px solid white;
-}
-
-/**
- * Single Line
- */
-
-.bold { font-weight: 700; }
-.hidden { display: none !important; }
 </code></pre>
 
 </section>
@@ -103,3 +90,90 @@ slug: css
     </ul>
 
 </section> 
+
+<section class="scrollto" id="css-declaration">
+  <h2>Declarations</h2>
+
+  <h3>Declaration Order</h3>
+
+  <p>When writing declarations, try to keep all similar declarations grouped together and separated by
+  new lines from other groups. The suggested order is as follows:</p>
+
+  <ol>
+    <li>Positioning</li>
+    <li>Box Model</li>
+    <li>Visual</li>
+    <li>Typographic</li>
+    <li>Misc</li>
+  </ol>
+  
+<pre><code class="language-css">
+.box {
+  /* Positioning */
+  
+  position: absolute;
+  top: 0;
+  z-index: 100;
+
+  /* Box Model */
+
+  display: block;
+  width: 100px;
+  float: none;
+
+  /* Visual */
+
+  color: red;
+  background-image: url('http://google.com');
+  border: 1px solid blue;
+
+  /* Typographic */
+
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-align: center;
+
+  /* Misc */
+
+  opacity: .5;
+  transform: translateY(-50%);
+  overflow: auto;
+}
+
+</code></pre>
+
+  <h3>Multi-line</h3>
+  <p>Very rarely will you run into an instance where a single line declaration is
+  more appropriate than a multi-line declaration. The only time a single line declaration
+  makes sense is for things such as helper classes.</p>
+
+<pre><code class="language-css">
+/**
+ * Multi-line
+ */
+
+.box {
+  width: 100px;
+  height: 100px;
+}
+
+.bordered {
+  border-top: 2px solid white;
+  border-bottom: 2px solid white;
+}
+
+/**
+ * Single Line
+ */
+
+.bold { font-weight: 700; }
+.hidden { display: none !important; }
+</code></pre>
+
+<h3>Media Queries</h3>
+
+<p>Make sure media queries are all placed next to the selectors that they affect and not bundled together at the end of a file.</p>
+
+<h3>Shorthand Notation</h3>
+
+</section>
