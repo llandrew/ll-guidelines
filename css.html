@@ -12,14 +12,12 @@ slug: css
   <p>Have a title at the top of each file. Make sure titles are brief yet relevant
   to the content contained within.</p>
 
-  <h4><em>Bad...</em></h4>
-
 <pre><code class="language-css">
 /**
  * Search Modules
  */
 </code></pre>
-
+  
   <h3>Multi-line</h3>
   <p>Very rarely will you run into an instance where a single line declaration is
   more appropriate than a multi-line declaration. The only time a single line declaration
@@ -59,5 +57,49 @@ slug: css
     <li>Words should be seperated by dashes (e.g. my-new-class), not Camel Case (e.g. myNewClass) or Snake Case (e.g. my_new_class).</li>
     <li>Names should be based on the B.E.M. (Block Element Modifier) convention. <a href="https://css-tricks.com/bem-101/"><em>BEM 101 - CSS Tricks</em></a></li>
   </ul>
+
+  <h3>Portability</h3>
+
+    <p>Avoid naming classes based on specific content. Describe what the class is, instead.</p>
+
+    <h4>Bad...</h4>
+
+    <pre><code class="language-css">.affiliated-logos {}</code></pre>
+
+    <h4>Better</h4>
+
+    <pre><code class="language-css">.slider {}</code></pre>
+  
+    <p>Don't include elements in selectors.</p>
+    
+    <h4>Bad...</h4>
+
+    <pre><code class="language-css">button.btn {}</code></pre>
+
+    <h4>Better</h4>
+
+    <pre><code class="language-css">.btn {}</code></pre>
+
+    <h3>Picking a Name</h3>
+
+    <ul>
+      <li>
+        Select what you want explicitly, rather than relying on circumstance or coincidence. Good Selector
+        Intent will rein in the reach and lead of your styles.
+      </li>
+      <li>
+        Write selectors for resuability, so that you can work more efficiently and reduce waste and repetition.
+      </li>
+      <li>
+        Do not nest selectors unnecessarily, because this will increase specificity and effect where else you can use your styles.
+      </li>
+      <li>
+        Do not qualify selectors unnecessarily, as this will impact the number of different elements
+        you can apply styles to.
+      </li>
+      <li>
+        Keep selectors as short as possible, in order to keep specificity down and performance up.
+      </li>
+    </ul>
 
 </section> 
