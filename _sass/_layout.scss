@@ -146,8 +146,7 @@ section:not(.expanded):hover::after {
   transition: opacity .5s ease-in-out;
 }*/
 
-.open,
-.content .open {
+.open {
   display: block;
 
   transform: none;

@@ -45,8 +45,8 @@
       //           windowBottom = $(window).scrollTop() + $(window).height();
 
             //if ( sectionBottom < windowBottom ) {
-              sections.eq(i)
-                .addClass('open');
+              // sections.eq(i)
+              //   .addClass('open');
             //}
       //     }
       //   })(i),
