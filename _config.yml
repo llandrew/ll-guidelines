@@ -10,7 +10,7 @@ title: Lifted Logic Guidelines
 email: info@liftedlogic.com
 description: > # this means to ignore newlines until "baseurl:"
   The official Lifted Logic code guidelines.
-baseurl: "" # the subpath of your site, e.g. /blog
+baseurl: "/ll-guidelines" # the subpath of your site, e.g. /blog
 url: "http://liftedlogic.com" # the base hostname & protocol for your site
 twitter_username: liftedlogic
 github_username:  liftedlogic
